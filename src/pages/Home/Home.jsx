@@ -1,7 +1,11 @@
 import React from 'react'
+import { BeakerIcon } from '@heroicons/react/24/solid'
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <div>
+        
+sdfsd
+    </div>
   )
 }
