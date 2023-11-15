@@ -1,6 +1,6 @@
 import React from 'react'
 import ContactBar from '../../shared/ContactBar'
-import NavBar from '../../shared/NavBar'
+import NavBar from '../Navbar/NavBar'
 
 export default function Header() {
   return (
