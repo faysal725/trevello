@@ -118,7 +118,7 @@ export default function Home() {
   const renderWhyChooseUs = () => {
     return (
       <LargeContainer>
-            <section className='grid grid-cols-2 gap-16 h-96'>
+            <section className='grid grid-cols-1 md:grid-cols-2 gap-16 h-96'>
             <div className='bg-blue-900'>image part</div>
             <div className='flex flex-col justify-center items-start'>
               <p className='font-bold italic text-blue-900'>Why Choose Us</p>
