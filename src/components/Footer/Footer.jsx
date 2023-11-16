@@ -1,4 +1,8 @@
 import Logo from "../../shared/Logo"
+import InputBox from "../../shared/InputBox"
+import {  PaperAirplaneIcon } from '@heroicons/react/24/outline'
+
+
 const navigation = {
     company: [
       { name: 'About Us', href: '#' },
@@ -120,7 +124,7 @@ const navigation = {
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.company.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-base leading-6 text-gray-300 hover:text-white">
+                        <a href={item.href} className="text-base leading-6 text-gray-400 hover:text-white">
                           {item.name}
                         </a>
                       </li>
@@ -132,7 +136,7 @@ const navigation = {
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.destination.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-base leading-6 text-gray-300 hover:text-white">
+                        <a href={item.href} className="text-base leading-6 text-gray-400 hover:text-white">
                           {item.name}
                         </a>
                       </li>
@@ -147,7 +151,7 @@ const navigation = {
                   <ul role="list" className="mt-12 space-y-4">
                     {navigation.topdestination.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-white">
                           {item.name}
                         </a>
                       </li>
@@ -163,18 +167,8 @@ const navigation = {
               <form className="mt-3 sm:flex sm:flex-col gap-3 items-start sm:max-w-md">
                 <div>
                     {/* input box  */}
-                    <label htmlFor="email-address" className="sr-only">
-                    Email address
-                    </label>
-                    <input
-                    type="email"
-                    name="email-address"
-                    id="email-address"
-                    autoComplete="email"
-                    required
-                    className="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:w-64 sm:text-sm sm:leading-6 xl:w-full"
-                    placeholder="Enter your email"
-                    />
+                    
+                    <InputBox changeInput={(value) => console.log(value)} label="email" placeholder="Enter Your Email" Icon={PaperAirplaneIcon}/>
                 </div>
                 <div className="mt-4 sm:mt-0 sm:flex-shrink-0">
                   <button
