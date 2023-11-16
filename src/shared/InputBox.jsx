@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function InputBox({label="any", changeInput, placeholder="any", title, Icon}) {
+export default function InputBox({label="any", changeInput, placeholder="any",  Icon}) {
 
   return (
-    <div className='relative'>
+    <div className='relative flex flex-col'>
         {/* input box  */}
         <label htmlFor={label} className="">
-        {title}
+        
         </label>
         <input
         type="text"
@@ -15,7 +15,7 @@ export default function InputBox({label="any", changeInput, placeholder="any", t
         onChange={(e) => changeInput(e.target.value)}
         autoComplete="email"
         required
-        className="w-full min-w-0 text-black appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:w-64 sm:text-sm sm:leading-6 xl:w-full pl-10"
+        className="w-full min-w-0 text-black appearance-none rounded-md border-2 bg-white px-3 py-1.5 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:w-64 sm:text-sm sm:leading-6 xl:w-full pl-10"
         placeholder={placeholder}
         />
         {

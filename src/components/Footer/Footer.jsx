@@ -1,6 +1,7 @@
 import Logo from "../../shared/Logo"
 import InputBox from "../../shared/InputBox"
 import {  PaperAirplaneIcon } from '@heroicons/react/24/outline'
+import ButtonPrimary from "../../shared/ButtonPrimary"
 
 
 const navigation = {
@@ -171,12 +172,8 @@ const navigation = {
                     <InputBox changeInput={(value) => console.log(value)} label="email" placeholder="Enter Your Email" Icon={PaperAirplaneIcon}/>
                 </div>
                 <div className="mt-4 sm:mt-0 sm:flex-shrink-0">
-                  <button
-                    type="submit"
-                    className="flex w-full items-center justify-center rounded-md bg-yellow-400 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-yellow-400/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500"
-                  >
-                    Submit
-                  </button>
+                  
+                  <ButtonPrimary handleClick={() => console.log('asdfsdf')} title="Submit" />
                 </div>
               </form>
               <p className="text-sm text-stone-300 pt-10">@2023 Trevello All Right Reserved</p>

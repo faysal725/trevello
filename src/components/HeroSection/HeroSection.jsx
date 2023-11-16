@@ -1,5 +1,5 @@
 import React from 'react'
-import LargeContainer from '../Container/LargeContainer'
+import LargeContainer from '../Wrapper/Container/LargeContainer'
 import heroImg1 from '../../images/hero/heroImg1.jpg'
 
 export default function HeroSection() {
@@ -30,7 +30,7 @@ export default function HeroSection() {
         )
     }
   return (
-    <div className='bg-blue-900'>
+    <div className='bg-blue-900 h-[500px] py-10'>
 
         <LargeContainer>
             <div className='grid grid-cols-12 py-'>
