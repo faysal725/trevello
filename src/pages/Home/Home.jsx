@@ -7,9 +7,10 @@ import ButtonPrimary from '../../shared/ButtonPrimary'
 import LargeContainer from '../../components/Wrapper/Container/LargeContainer'
 import Heading1 from '../../components/Wrapper/Heading/Heading1'
 import CarouselComponent from '../../shared/CarouselComponent'
-import CardCarousel from '../../shared/CardCarousel'
+import CardCarousel from '../../shared/CardCarouse/CardCarousel'
 import DestinationCard from '../../components/Cards/DestinationCard'
 import TourCard from '../../components/Cards/TourCard'
+import TrustedPartner from '../../components/TrustedPartner/TrustedPartner'
 
 export default function Home() {
 
@@ -58,6 +59,12 @@ export default function Home() {
     {title: "wonders of the west", country: "City Tours", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC6Br4x4iQdSsuUsR5IuDsAJAFmXNbKTb0Pw&usqp=CAU", rating:"4.5" , review:"15", days:"7days", price: "450"},
   ]
 
+
+  const testimonials =[
+    {name: "molle Rose", occupation: "Photographar", image:"https://img.freepik.com/free-photo/beautiful-young-man-looking-camera-home-garden_1301-5132.jpg?w=740&t=st=1700149336~exp=1700149936~hmac=a2facb57997481801c94cfdf266ed3b9bbe5aa26b253ba82d1c79cd7b805d7c5", speech: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti iusto perspiciatis deleniti delectus quo cumque quia? Iure corrupti amet quisquam."},
+    {name: "Jack", occupation: "Photographar", image:"https://img.freepik.com/free-photo/beautiful-young-man-looking-camera-home-garden_1301-5132.jpg?w=740&t=st=1700149336~exp=1700149936~hmac=a2facb57997481801c94cfdf266ed3b9bbe5aa26b253ba82d1c79cd7b805d7c5", speech: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti iusto perspiciatis deleniti delectus quo cumque quia? Iure corrupti amet quisquam."},
+    {name: "Titanic", occupation: "Photographar", image:"https://img.freepik.com/free-photo/portrait-happy-woman_1303-9957.jpg?w=1380&t=st=1700149393~exp=1700149993~hmac=5201a2132d0df47456b689e68574e4d5f79e4760b2d2fc905056fd7ced737111", speech: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti iusto perspiciatis deleniti delectus quo cumque quia? Iure corrupti amet quisquam."},
+  ]
 
   const formContainer = () => {
     return (
@@ -176,6 +183,76 @@ export default function Home() {
       </Heading1>
     )
   }
+
+  
+  const renderWhyWeAreBest = () => {
+    return (
+      <LargeContainer>
+            <section className='grid grid-cols-1 md:grid-cols-2 gap-16 h-96'>
+              <div className='flex flex-col justify-center items-start'>
+                <p className='font-bold italic text-blue-900'>Why We Are Best</p>
+                <p className='text-4xl font-bold pb-5'>Keep Things <br /> Flexible</p>
+
+                <button className='border rounded-lg p-3 px-7 font-semibold transition-all duration-150 hover:bg-blue-900 hover:text-white'>Contact Us</button>
+                <ul className='text-slate-800 grid grid-cols-2 gap-x-8 gap-y-2 py-5'>
+                  <li className='relative z-0'>
+                    <p className='text-2xl font-medium italic '>120+</p>
+                    <div className='bg-yellow-400 h-7 rounded-full w-7 absolute top-0.5 left-0 -z-10'></div>
+                    <p className='pt-2 text-sm text-slate-500'>Total Destination</p>
+                  </li>
+
+                  <li className='relative z-0'>
+                    <p className='text-2xl font-medium italic '>12K+</p>
+                    <div className='bg-yellow-400 h-7 rounded-full w-7 absolute top-0.5 left-0 -z-10'></div>
+                    <p className='pt-2 text-sm text-slate-500'>Total Destination</p>
+                  </li>
+
+                  <li className='relative z-0'>
+                    <p className='text-2xl font-medium italic '>500+</p>
+                    <div className='bg-yellow-400 h-7 rounded-full w-7 absolute top-0.5 left-0 -z-10'></div>
+                    <p className='pt-2 text-sm text-slate-500'>Total Destination</p>
+                  </li>
+
+                  <li className='relative z-0'>
+                    <p className='text-2xl font-medium italic '>120+</p>
+                    <div className='bg-yellow-400 h-7 rounded-full w-7 absolute top-0.5 left-0 -z-10'></div>
+                    <p className='pt-2 text-sm text-slate-500'>Positive Reviews</p>
+                  </li>
+                </ul>
+
+              </div>
+              <div className='bg-blue-900'>image part</div>
+
+
+
+            </section>
+        </LargeContainer>
+    )
+  }
+
+
+  const renderTestimonial = (tour) => {
+    return (
+      <Heading1 heading="What our customer says about us" title="Testimonial" >
+
+          <CardCarousel slidesShow={1}>
+            {
+              testimonials.map((info, index) => (
+                <div className='font-bold max-w-sm '>
+                  <div className='flex justify-center'>
+                    <img src={info.image} className='h-20 w-20 rounded-full' alt="" />
+                  </div>
+                  <p className='text-center py-4'><q>{info.speech}</q></p>
+                  <p className='text-center text-sm font-medium  text-slate-600'>-By {info.name}, {info.occupation}</p>
+                </div>
+              ))
+            }
+          </CardCarousel>
+      </Heading1>
+    )
+  }
+
+
   return (
     <div>
         
@@ -208,6 +285,25 @@ export default function Home() {
       <div className='mt-16 bg-blue-900'>
         {renderFeaturedTours()}
       </div>
+
+
+      
+      {/* why we are best  */}
+      <div className='mt-16'>
+        {renderWhyWeAreBest()}
+      </div>
+
+
+      {/* testimonial  */}
+      <div className='mt-16'>
+        {renderTestimonial(tourType)}
+      </div>
+
+
+      {/* trusted partner  */}
+      <TrustedPartner />
+
+      
     </div>
   )
 }
