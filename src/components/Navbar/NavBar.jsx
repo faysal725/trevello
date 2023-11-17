@@ -3,9 +3,10 @@ import {  UserIcon } from '@heroicons/react/24/outline'
 import React, { useState } from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 import Logo from '../../shared/Logo'
+import { useNavigate } from 'react-router-dom'
 
 export default function NavBar() {
-
+  const navigateTo = useNavigate()
   const navigation = [
     { name: 'Home', href: '#', current: true },
     { name: 'About', href: '#', current: false },
@@ -33,9 +34,9 @@ export default function NavBar() {
             <MagnifyingGlassIcon className='h-5 w-5 ' />
             <UserIcon className='h-5 w-5 ' />
             <div className='flex gap-1 text-slate-800'>
-              <button className='hover:text-blue-800 font-medium'>Login</button>
+              <button onClick={() => navigateTo('/login')} className='hover:text-blue-800 font-medium'>Login</button>
               /
-              <button className='hover:text-blue-800 font-medium'>Signup</button>
+              <button onClick={() => navigateTo('/signup')} className='hover:text-blue-800 font-medium'>Signup</button>
             </div>
         </div>
 

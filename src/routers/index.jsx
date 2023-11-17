@@ -2,12 +2,14 @@ import React from 'react'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from '../pages/LoginPage';
+import Signup from '../pages/Signup/Signup';
 import Home from '../pages/Home/Home';
 import UserLayout from '../components/Layout/User';
 
 export const commonPages = [
   { path: "/", component: Home },
-  { path: "/login", component: LoginPage }
+  { path: "/login", component: LoginPage },
+  { path: "/signup", component: Signup }
 ];
 
 
